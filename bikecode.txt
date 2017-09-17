@@ -1,0 +1,6 @@
+for i in 1 2 3 4 5 6 7 8 9; do
+ awk -F "\"*,\"*" '{print $4}' 20160$i-citibike-tripdata.csv >> finalidnew.txt;
+ awk -F "\"*,\"*" '{print $8}' 20160$i-citibike-tripdata.csv >> finalidnew.txt;
+done
+sort -n finalidnew.txt | uniq -c | sort -n >  timeslistnew.txt
+cat timelistnew.txt
